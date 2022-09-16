@@ -297,21 +297,3 @@ scale = 1
 icon = "muximux-lazylibrarian"
 color = "#000000"
 enabled = "true"
-
-#################
-
-[Radarr]
-name = "Radarr"
-url = "http://locip:7878"
-scale = 1
-icon = "muximux-sonarr"
-color = "#000000"
-enabled = "true"
-
-[Radarr]
-name = "Radarr"
-url = "http://locip:7878"
-scale = 1
-icon = "muximux-sonarr"
-color = "#ffe599"
-enabled = "true"

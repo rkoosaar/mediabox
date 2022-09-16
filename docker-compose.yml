@@ -580,7 +580,7 @@ services:
     volumes:
         - './readarr:/config'
         - '${DLDIR}/completed:/data/completed'
-        - '${BOOKDIR}:/books'
+        - '${BOOKSDIR}:/books'
         - '/etc/localtime:/etc/localtime:ro'
 
   # ----------------------------------------
@@ -600,7 +600,7 @@ services:
     volumes:
         - './lazylibrarian:/config'
         - '${DLDIR}/completed:/data/completed'
-        - '${BOOKDIR}:/books'
+        - '${BOOKSDIR}:/books'
         - '/etc/localtime:/etc/localtime:ro'
 
   # ----------------------------------------
