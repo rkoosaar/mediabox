@@ -42,7 +42,7 @@ colors:
 links:
   - name: "Mediabox"
     icon: "fab fa-github"
-    url: "https://github.com/tom472/mediabox"
+    url: "https://github.com/rkoosaar/mediabox"
     target: "_blank"
   - name: "Buy me a coffee"
     icon: "fas fa-mug-hot"

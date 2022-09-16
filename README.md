@@ -39,6 +39,7 @@ Components include:
 * [Tdarr Distributed Transcoding System](https://tdarr.io)
 * [TubeSync - YouTube PVR](https://github.com/meeb/tubesync)
 * [Watchtower Automatic container updater](https://github.com/containrrr/watchtower)
+* [Bazarr](https://www.bazarr.media/)
 
 ## Prerequisites
 
