@@ -296,7 +296,7 @@ services:
     restart: unless-stopped
     network_mode: "bridge"
     ports:
-        - '${IP_ADDRESS}:8080:80'
+        - '${IP_ADDRESS}:8018:80'
     environment:
         - PUID=${PUID}
         - PGID=${PGID}
@@ -513,7 +513,7 @@ services:
     restart: unless-stopped
     network_mode: "bridge"
     ports:
-        - '${IP_ADDRESS}:8081:8081'
+        - '${IP_ADDRESS}:8381:8081'
     environment:
         - PUID=${PUID}
         - PGID=${PGID}
@@ -541,6 +541,66 @@ services:
         - './sonarr:/config'
         - '${DLDIR}/completed:/data/completed'
         - '${TVDIR}:/tv'
+        - '/etc/localtime:/etc/localtime:ro'
+
+  # ----------------------------------------
+  # BAZARR
+  # ----------------------------------------
+  bazarr:
+    image: lscr.io/linuxserver/bazarr
+    container_name: bazarr
+    restart: unless-stopped
+    network_mode: "bridge"
+    ports:
+        - '${IP_ADDRESS}:6767:6767'
+    environment:
+        - PUID=${PUID}
+        - PGID=${PGID}
+        - TZ=${TZ}
+    volumes:
+        - './bazarr:/config'
+        - '${MOVIEDIR}:/movies'
+        - '${TVDIR}:/tv'
+        - '/etc/localtime:/etc/localtime:ro'
+
+  # ----------------------------------------
+  # READARR
+  # ----------------------------------------
+  readarr:
+    image: lscr.io/linuxserver/readarr:develop
+    container_name: readarr
+    restart: unless-stopped
+    network_mode: "bridge"
+    ports:
+        - '${IP_ADDRESS}:8787:8787'
+    environment:
+        - PUID=${PUID}
+        - PGID=${PGID}
+        - TZ=${TZ}
+    volumes:
+        - './readarr:/config'
+        - '${DLDIR}/completed:/data/completed'
+        - '${BOOKDIR}:/books'
+        - '/etc/localtime:/etc/localtime:ro'
+
+  # ----------------------------------------
+  # LazyLibrarian
+  # ----------------------------------------
+  lazylibrarian:
+    image: lscr.io/linuxserver/lazylibrarian
+    container_name: lazylibrarian
+    restart: unless-stopped
+    network_mode: "bridge"
+    ports:
+        - '${IP_ADDRESS}:5299:5299'
+    environment:
+        - PUID=${PUID}
+        - PGID=${PGID}
+        - TZ=${TZ}
+    volumes:
+        - './lazylibrarian:/config'
+        - '${DLDIR}/completed:/data/completed'
+        - '${BOOKDIR}:/books'
         - '/etc/localtime:/etc/localtime:ro'
 
   # ----------------------------------------

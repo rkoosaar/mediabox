@@ -57,6 +57,7 @@ if [ -e 1.env ]; then
     miscdirectory=$(grep MISCDIR 1.env | cut -d = -f2)
     moviedirectory=$(grep MOVIEDIR 1.env | cut -d = -f2)
     musicdirectory=$(grep MUSICDIR 1.env | cut -d = -f2)
+    booksdirectory=$(grep BOOKSDIR 1.env | cut -d = -f2)
     # Echo back the media directioies, and other info to see if changes are needed
     printf "These are the Media Directory paths currently configured.\\n"
     printf "Your DOWNLOAD Directory is: %s \\n" "$dldirectory"
@@ -64,6 +65,7 @@ if [ -e 1.env ]; then
     printf "Your MISC Directory is: %s \\n" "$miscdirectory"
     printf "Your MOVIE Directory is: %s \\n" "$moviedirectory"
     printf "Your MUSIC Directory is: %s \\n" "$musicdirectory"
+    printf "Your BOOKS Directory is: %s \\n" "$booksdirectory"
     printf "\\n\\n"
     read  -r -p "Are these directiores still correct? (y/n) " diranswer "$(echo \n)"
     printf "\\n\\n"
@@ -128,6 +130,7 @@ read -r -p "Where do you store your TV media? (Please use full path - /path/to/t
 read -r -p "Where do you store your MISC media? (Please use full path - /path/to/misc ): " miscdirectory
 read -r -p "Where do you store your MOVIE media? (Please use full path - /path/to/movies ): " moviedirectory
 read -r -p "Where do you store your MUSIC media? (Please use full path - /path/to/music ): " musicdirectory
+read -r -p "Where do you store your BOOKS media? (Please use full path - /path/to/books ): " booksdirectory
 fi
 if [ "$diranswer" == "n" ]; then
 read -r -p "Where do you store your DOWNLOADS? (Please use full path - /path/to/downloads ): " dldirectory
@@ -135,6 +138,7 @@ read -r -p "Where do you store your TV media? (Please use full path - /path/to/t
 read -r -p "Where do you store your MISC media? (Please use full path - /path/to/misc ): " miscdirectory
 read -r -p "Where do you store your MOVIE media? (Please use full path - /path/to/movies ): " moviedirectory
 read -r -p "Where do you store your MUSIC media? (Please use full path - /path/to/music ): " musicdirectory
+read -r -p "Where do you store your BOOKS media? (Please use full path - /path/to/books ): " booksdirectory
 fi
 
 # Create the directory structure
@@ -161,6 +165,10 @@ fi
 if [ -z "$musicdirectory" ]; then
     mkdir -p content/music
     musicdirectory="$PWD/content/music"
+fi
+if [ -z "$booksdirectory" ]; then
+    mkdir -p content/books
+    booksdirectory="$PWD/content/books"
 fi
 
 # Adjust for Container name changes
@@ -199,6 +207,9 @@ mkdir -p sqlitebrowser
 mkdir -p tautulli
 mkdir -p tdarr
 mkdir -p tubesync
+mkdir -p bazarr
+mkdir -p readarr
+mkdir -p lazylibrarian
 
 # Create menu - Select and Move the PIA VPN files
 echo "The following PIA Servers are avialable that support port-forwarding (for DelugeVPN); Please select one:"
@@ -260,6 +271,7 @@ echo "TVDIR=$tvdirectory"
 echo "MISCDIR=$miscdirectory"
 echo "MOVIEDIR=$moviedirectory"
 echo "MUSICDIR=$musicdirectory"
+echo "BOOKSDIR=$booksdirectory"
 echo "PIAUNAME=$piauname"
 echo "PIAPASS=$piapass"
 echo "CIDR_ADDRESS=$lannet"

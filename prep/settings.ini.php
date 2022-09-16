@@ -220,7 +220,7 @@ enabled = "true"
 
 [SickChill]
 name = "SickChill"
-url = "http://locip:8081"
+url = "http://locip:8381"
 scale = 1
 icon = "muximux-tv"
 color = "#6fa8dc"
@@ -272,4 +272,46 @@ url = "http://locip:4848"
 scale = 1
 icon = "muximux-youtube"
 color = "#cc0000"
+enabled = "true"
+
+[Bazarr]
+name = "Bazarr"
+url = "http://locip:6767"
+scale = 1
+icon = "muximux-bazarr"
+color = "#000000"
+enabled = "true"
+
+[Readarr]
+name = "Readarr"
+url = "http://locip:8787"
+scale = 1
+icon = "muximux-readarr"
+color = "#000000"
+enabled = "true"
+
+[LazyLibrarian]
+name = "LazyLibrarian"
+url = "http://locip:5299"
+scale = 1
+icon = "muximux-lazylibrarian"
+color = "#000000"
+enabled = "true"
+
+#################
+
+[Radarr]
+name = "Radarr"
+url = "http://locip:7878"
+scale = 1
+icon = "muximux-sonarr"
+color = "#000000"
+enabled = "true"
+
+[Radarr]
+name = "Radarr"
+url = "http://locip:7878"
+scale = 1
+icon = "muximux-sonarr"
+color = "#ffe599"
 enabled = "true"
