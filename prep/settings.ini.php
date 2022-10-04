@@ -290,10 +290,10 @@ icon = "muximux-readarr"
 color = "#000000"
 enabled = "true"
 
-[LazyLibrarian]
-name = "LazyLibrarian"
-url = "http://locip:5299"
+[Calibre]
+name = "Calibre"
+url = "http://locip:8480"
 scale = 1
-icon = "muximux-lazylibrarian"
+icon = "muximux-calibre"
 color = "#000000"
 enabled = "true"

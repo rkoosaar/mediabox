@@ -584,21 +584,24 @@ services:
         - '/etc/localtime:/etc/localtime:ro'
 
   # ----------------------------------------
-  # LazyLibrarian
+  # Calibre
   # ----------------------------------------
-  lazylibrarian:
-    image: lscr.io/linuxserver/lazylibrarian
-    container_name: lazylibrarian
+  calibre:
+    image: lscr.io/linuxserver/calibre:latest
+    container_name: calibre
     restart: unless-stopped
     network_mode: "bridge"
     ports:
-        - '${IP_ADDRESS}:5299:5299'
+        - '${IP_ADDRESS}:8480:8080'
+        - '${IP_ADDRESS}:8481:8081'        
     environment:
         - PUID=${PUID}
         - PGID=${PGID}
         - TZ=${TZ}
+#        - PASSWORD= #optional
+#        - CLI_ARGS= #optional
     volumes:
-        - './lazylibrarian:/config'
+        - './calibre:/config'
         - '${DLDIR}/completed:/data/completed'
         - '${BOOKSDIR}:/books'
         - '/etc/localtime:/etc/localtime:ro'

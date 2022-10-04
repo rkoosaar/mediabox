@@ -209,7 +209,7 @@ mkdir -p tdarr
 mkdir -p tubesync
 mkdir -p bazarr
 mkdir -p readarr
-mkdir -p lazylibrarian
+mkdir -p calibre
 
 # Create menu - Select and Move the PIA VPN files
 echo "The following PIA Servers are avialable that support port-forwarding (for DelugeVPN); Please select one:"
