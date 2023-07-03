@@ -13,25 +13,6 @@ version: '3.5'
 services:
 
   # ----------------------------------------
-  # COUCHPOTATO
-  # ----------------------------------------
-  couchpotato:
-    image: lscr.io/linuxserver/couchpotato
-    container_name: couchpotato
-    restart: unless-stopped
-    network_mode: "bridge"
-    ports:
-        - '${IP_ADDRESS}:5050:5050'
-    environment:
-        - PUID=${PUID}
-        - PGID=${PGID}
-    volumes:
-        - './couchpotato:/config'
-        - '${DLDIR}/completed:/downloads'
-        - '${MOVIEDIR}:/movies'
-        - '/etc/localtime:/etc/localtime:ro'
-
-  # ----------------------------------------
   # DELUGEVPN
   # ----------------------------------------
   arch-delugevpn:
@@ -191,24 +172,6 @@ services:
         - './homer:/www/assets'
 
   # ----------------------------------------
-  # JACKETT
-  # ----------------------------------------
-  jackett:
-    image: lscr.io/linuxserver/jackett
-    container_name: jackett
-    restart: unless-stopped
-    network_mode: "bridge"
-    ports:
-        - '${IP_ADDRESS}:9117:9117'
-    environment:
-        - PUID=${PUID}
-        - PGID=${PGID}
-    volumes:
-        - './jackett:/config'
-        - '${DLDIR}/completed:/downloads'
-        - '/etc/localtime:/etc/localtime:ro'
-
-  # ----------------------------------------
   # JELLYFIN
   # ----------------------------------------
   jellyfin:
@@ -342,24 +305,6 @@ services:
       - '${IP_ADDRESS}:6789:6789'
     volumes:
       - './nzbget:/config'
-      - '${DLDIR}:/downloads'
-
-  # ----------------------------------------
-  # NZBHydra2
-  # ----------------------------------------
-  nzbhydra2:
-    image: lscr.io/linuxserver/nzbhydra2
-    container_name: nzbhydra2
-    restart: unless-stopped
-    environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
-      - TZ=${TZ}
-    network_mode: 'bridge'
-    ports:
-      - '${IP_ADDRESS}:5076:5076'
-    volumes:
-      - './nzbhydra2:/config'
       - '${DLDIR}:/downloads'
 
   # ----------------------------------------
@@ -503,25 +448,6 @@ services:
         - ${IP_ADDRESS}:4545:4545
     volumes:
         - ./requestrr:/config
-
-  # ----------------------------------------
-  # SICKCHILL
-  # ----------------------------------------
-  sickchill:
-    image: lscr.io/linuxserver/sickchill
-    container_name: sickchill
-    restart: unless-stopped
-    network_mode: "bridge"
-    ports:
-        - '${IP_ADDRESS}:8381:8081'
-    environment:
-        - PUID=${PUID}
-        - PGID=${PGID}
-    volumes:
-        - './sickchill:/config'
-        - '${DLDIR}/completed:/downloads'
-        - '${TVDIR}:/tv'
-        - '/etc/localtime:/etc/localtime:ro'
 
   # ----------------------------------------
   # SONARR

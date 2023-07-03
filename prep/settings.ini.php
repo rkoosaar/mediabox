@@ -35,14 +35,6 @@ icon = "muximux-bullhorn"
 color = "#93c47d"
 enabled = "true"
 
-[Couchpotato]
-name = "CouchPotato"
-url = "http://locip:5050"
-scale = 1
-icon = "muximux-couchpotato"
-color = "#f85c22"
-enabled = "true"
-
 [Deluge]
 name = "Deluge"
 url = "http://locip:8112"
@@ -99,14 +91,6 @@ icon = "muximux-home"
 color = "#0b5394"
 enabled = "true"
 
-[Jackett]
-name = "Jackett"
-url = "http://locip:9117"
-scale = 1
-icon = "muximux-jackett"
-color = "#000000"
-enabled = "true"
-
 [Jellyfin]
 name = "JellyFin"
 url = "http://locip:8096"
@@ -151,14 +135,6 @@ name = "NZBGet"
 url = "http://locip:6789"
 scale = 1
 icon = "muximux-download"
-color = "#3f8927"
-enabled = "true"
-
-[NZBHydra2]
-name = "NZBHydra2"
-url = "http://locip:5076"
-scale = 1
-icon = "muximux-nzbhydra"
 color = "#3f8927"
 enabled = "true"
 
@@ -216,14 +192,6 @@ url = "http://locip:4545"
 scale = 1
 icon = "muximux-search"
 color = "#674ea7"
-enabled = "true"
-
-[SickChill]
-name = "SickChill"
-url = "http://locip:8381"
-scale = 1
-icon = "muximux-tv"
-color = "#6fa8dc"
 enabled = "true"
 
 [Sonarr]
