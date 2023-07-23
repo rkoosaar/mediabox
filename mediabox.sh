@@ -174,7 +174,6 @@ fi
 # Adjust for Container name changes
 [ -d "sickrage/" ] && mv sickrage/ sickchill  # Switch from Sickrage to SickChill
 
-mkdir -p couchpotato
 mkdir -p delugevpn
 mkdir -p delugevpn/config/openvpn
 mkdir -p duplicati
@@ -185,14 +184,12 @@ mkdir -p glances
 mkdir -p headphones
 mkdir -p historical/env_files
 mkdir -p homer
-mkdir -p jackett
 mkdir -p jellyfin
 mkdir -p lidarr
 mkdir -p metube
 mkdir -p minio
 mkdir -p muximux
 mkdir -p nzbget
-mkdir -p nzbhydra2
 mkdir -p ombi
 mkdir -p overseerr
 mkdir -p "plex/Library/Application Support/Plex Media Server/Logs"
@@ -200,7 +197,6 @@ mkdir -p portainer
 mkdir -p prowlarr
 mkdir -p radarr
 mkdir -p requestrr
-mkdir -p sickchill
 mkdir -p sonarr
 mkdir -p speedtest
 mkdir -p sqlitebrowser

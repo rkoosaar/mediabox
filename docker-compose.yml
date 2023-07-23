@@ -36,7 +36,7 @@ services:
         - VPN_CLIENT=wireguard
         - VPN_REMOTE=${VPN_REMOTE}
         - ENABLE_PRIVOXY=yes
-        - STRICT_PORT_FORWARD=yes
+        - STRICT_PORT_FORWARD=no
         - LAN_NETWORK=${CIDR_ADDRESS}
         - NAME_SERVERS=84.200.69.80,37.235.1.174,1.1.1.1,37.235.1.177,84.200.70.40,1.0.0.1
         - DEBUG=false
