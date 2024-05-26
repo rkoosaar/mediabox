@@ -196,7 +196,7 @@ services:
         target: "_blank"
       - name: "Netdata"
         logo: "assets/icons/netdata.png"
-        tag: "moniotr"
+        tag: "monitor"
         tagstyle: "is-danger"
         url: "http://locip:19999"
         target: "_blank"

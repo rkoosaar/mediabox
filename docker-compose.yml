@@ -527,6 +527,7 @@ services:
     volumes:
         - './calibre:/config'
         - '${DLDIR}/completed:/data/completed'
+        - '${DLDIR}/books_manual_import:/data/books_manual_import'
         - '${BOOKSDIR}:/books'
         - '/etc/localtime:/etc/localtime:ro'
 

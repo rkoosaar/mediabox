@@ -31,7 +31,7 @@ if [ -e .env ]; then
     # Check to see if this script "mediabox.sh" was updated and restart it if necessary
     changed_files="$(git diff-tree -r --name-only --no-commit-id ORIG_HEAD HEAD)"
     # Provide a message once the Git check/update  is complete
-    if [ -z "$changed_files" ]; then
+    if [ -z "$changed_files" ]; then 
         printf "Your Mediabox is current - No Update needed.\\n\\n"
     else
         printf "Mediabox Files Update complete.\\n\\nThis script will restart if necessary\\n\\n"
